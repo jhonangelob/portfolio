@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Jhon Angelo Bustarde | Web Developer
 
-## Getting Started
+Hello and welcome to the source code for my personal portfolio website. This
+repository is made public so you can have a quick look at how I go about my web
+development.
 
-First, run the development server:
+Quick rundown of the technologies being used:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [Next.JS](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Sanity](https://www.sanity.io/)
+- [EmailJS](https://www.emailjs.com/)
+- [Vercel](https://vercel.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+other technologies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [framer-motion](https://www.framer.com/motion/)
+- [react-social-icons](https://github.com/jaketrent/react-social-icons)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## More Information
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+View my LinkedIn profile [here](https://www.linkedin.com/in/jhonangelob/)

@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+input,
+textarea {
+  appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.app {
+  @apply bg-background min-h-screen;
+}
+
+.wrapper {
+  @apply w-full max-w-4xl p-6 md:my-16;
+}
+
+.header_text {
+  @apply font-bold text-6xl md:text-8xl text-white text-center mb-12;
+}
+
+.header_text2 {
+  @apply font-bold text-5xl md:text-6xl text-white;
+}
+
+.input_text {
+  @apply text-sm text-white border-b border-black3 active:border-accent valid:border-accent focus:border-accent outline-none p-3;
+}
+
+.input_textarea {
+  @apply text-sm text-white border-b border-black3 active:border-accent valid:border-accent focus:border-accent outline-none p-3 resize-none;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.transition-slow {
+  @apply transition duration-300;
+}
+
+.transition-normal {
+  @apply transition duration-150;
+}
+
+.transition-fast {
+  @apply transition duration-75;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth !important;
+  }
+}
