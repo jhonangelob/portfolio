@@ -64,7 +64,7 @@ table {
 }
 
 .wrapper {
-  @apply w-full max-w-4xl p-6 md:my-16;
+  @apply w-full max-w-4xl p-6 md:my-16 scroll-mt-16;
 }
 
 .header_text {
