@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { animate } from '@/utils/animate';
 import { Props } from './types';
 
-const About = ({ file }: Props): React.ReactElement => {
+const Component = ({ file }: Props): React.ReactElement => {
   return (
     <section className='wrapper flex flex-col gap-6' id='about'>
       <h1 className='header_text2'>About</h1>
@@ -66,4 +66,4 @@ const About = ({ file }: Props): React.ReactElement => {
   );
 };
 
-export default About;
+export default Component;

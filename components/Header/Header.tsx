@@ -9,7 +9,7 @@ import { Props } from './types';
 
 const MotionLink = motion(Link);
 
-const Header = ({ socials }: Props): React.ReactElement => {
+const Component = ({ socials }: Props): React.ReactElement => {
   const showBanner = true;
   return (
     <Fragment>
@@ -20,7 +20,7 @@ const Header = ({ socials }: Props): React.ReactElement => {
         {showBanner ? (
           <p className='text-white text-sm'>
             Check out my awesome{' '}
-            <Link href='#about' className='text-accent'>
+            <Link href='/#about' className='text-accent' scroll={false}>
               résumé
             </Link>{' '}
             to learn more about me!
@@ -75,4 +75,4 @@ const Header = ({ socials }: Props): React.ReactElement => {
   );
 };
 
-export default Header;
+export default Component;

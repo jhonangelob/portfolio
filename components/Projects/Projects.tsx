@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { animate } from '@/utils/animate';
 import { Props } from './types';
 
-const Projects = ({ projects }: Props): React.ReactElement => {
+const Component = ({ projects }: Props): React.ReactElement => {
   return (
     <section className='wrapper flex-center flex-col my-8' id='projects'>
       <h1 className='header_text'>Projects</h1>
@@ -46,4 +46,4 @@ const Projects = ({ projects }: Props): React.ReactElement => {
   );
 };
 
-export default Projects;
+export default Component;

@@ -9,7 +9,7 @@ import { animate } from '@/utils/animate';
 import { sendEmail } from '@/app/api/email';
 import { Props } from './types';
 
-const Contact = ({ file, socials }: Props): React.ReactElement => {
+const Component = ({ file, socials }: Props): React.ReactElement => {
   const contactForm = useRef<HTMLFormElement | null>(null);
   const [sending, setSending] = useState<boolean>(false);
 
@@ -99,8 +99,7 @@ const Contact = ({ file, socials }: Props): React.ReactElement => {
             >
               <Image src='assets/icons/file.svg' alt='pdf' fill={true} />
             </div>
-
-            <p> Grab a copy</p>
+            Grab a copy
           </Link>
           <div className='flex flex-col text-xs items-center md:items-start md:text-sm text-gray'>
             <p>Calamba, Laguna</p>
@@ -118,6 +117,12 @@ const Contact = ({ file, socials }: Props): React.ReactElement => {
               />
             ))}
           </div>
+          <Link
+            href='/'
+            className='text-sm uppercase text-black3 flex flex-row mt-6'
+          >
+            Scroll to top
+          </Link>
         </motion.div>
         <motion.div
           className='hidden md:flex mt-12 flex-col items-center md:items-start gap-2'
@@ -145,8 +150,7 @@ const Contact = ({ file, socials }: Props): React.ReactElement => {
             >
               <Image src='assets/icons/file.svg' alt='pdf' fill={true} />{' '}
             </div>
-
-            <p>Grab a copy</p>
+            Grab a copy
           </Link>
           <div className='flex flex-col text-xs items-center md:items-start md:text-sm text-gray'>
             <p>Calamba, Laguna</p>
@@ -164,10 +168,16 @@ const Contact = ({ file, socials }: Props): React.ReactElement => {
               />
             ))}
           </div>
+          <Link
+            href='/'
+            className='text-sm uppercase text-black3 flex flex-row mt-6'
+          >
+            Scroll to top
+          </Link>
         </motion.div>
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default Component;

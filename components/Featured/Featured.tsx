@@ -1,6 +1,6 @@
 import { Props } from './types';
 
-const Featured = ({}: Props): React.ReactElement => {
+const Component = ({}: Props): React.ReactElement => {
   return (
     <section
       className='wrapper mt-24 mb-36 flex-center flex-col gap-2 md:gap-6'
@@ -17,4 +17,4 @@ const Featured = ({}: Props): React.ReactElement => {
   );
 };
 
-export default Featured;
+export default Component;

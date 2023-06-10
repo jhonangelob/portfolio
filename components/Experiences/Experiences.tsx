@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Props } from './types';
 
-const Experiences = ({
+const Component = ({
   experiences,
   technologies,
 }: Props): React.ReactElement => {
@@ -88,4 +88,4 @@ const Experiences = ({
   );
 };
 
-export default Experiences;
+export default Component;

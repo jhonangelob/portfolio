@@ -1,3 +1,4 @@
+import { Footer } from '@/components/Footer';
 import {
   fetchExperiences,
   fetchProjects,
@@ -5,13 +6,12 @@ import {
   fetchSocials,
   fetchTechnologies,
 } from './api/sanity';
-import Header from '@/components/Header/Header';
-import Featured from '@/components/Featured/Featured';
-import About from '@/components/About/About';
-import Projects from '@/components/Projects/Projects';
-import Experiences from '@/components/Experiences/Experiences';
-import Contact from '@/components/Contact/Contact';
-import Footer from '@/components/Footer/Footer';
+import { Contact } from '@/components/Contact';
+import { Experiences } from '@/components/Experiences';
+import { Projects } from '@/components/Projects';
+import { About } from '@/components/About';
+import { Featured } from '@/components/Featured';
+import { Header } from '@/components/Header';
 
 const Home = async () => {
   const projectsData = fetchProjects();
