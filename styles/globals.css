@@ -76,11 +76,15 @@ table {
 }
 
 .input_text {
-  @apply text-sm text-white border-b border-black3 active:border-accent valid:border-accent focus:border-accent outline-none p-3;
+  @apply text-sm text-white border-b border-black3 active:border-accent focus:border-accent outline-none p-3;
+}
+
+.input_text_email {
+  @apply text-sm text-white border-b border-black3 active:border-accent focus:border-accent outline-none pt-3 pb-3 pl-3;
 }
 
 .input_textarea {
-  @apply text-sm text-white border-b border-black3 active:border-accent valid:border-accent focus:border-accent outline-none p-3 resize-none;
+  @apply text-sm text-white border-b border-black3 active:border-accent focus:border-accent outline-none p-3 resize-none;
 }
 
 .flex-center {
