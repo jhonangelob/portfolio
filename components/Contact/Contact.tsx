@@ -8,21 +8,32 @@ import Link from 'next/link';
 import { animate } from '@/utils/animate';
 import { sendEmail } from '@/app/api/email';
 import { Props } from './types';
+import { validateEmail } from '@/utils/validation';
 
 const Component = ({ file, socials }: Props): React.ReactElement => {
   const contactForm = useRef<HTMLFormElement | null>(null);
   const [sending, setSending] = useState<boolean>(false);
+  const [emailAddress, setEmailAddress] = useState<string>('');
+  const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      setSending(true);
-      await sendEmail(contactForm.current);
-      setSending(false);
-      e.target.reset();
+      if (isEmailValid) {
+        setSending(true);
+        await sendEmail(contactForm.current);
+        setSending(false);
+        e.target.reset();
+      }
     } catch (error) {
       setSending(false);
     }
+  };
+
+  const handleOnChange = (e: any) => {
+    const { value } = e.target;
+    setIsEmailValid(validateEmail.test(value));
+    setEmailAddress(value);
   };
 
   return (
@@ -52,13 +63,20 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
               placeholder='Name'
               required
             />
-            <input
-              className='input_text'
-              type='text'
-              name='email'
-              placeholder='Email'
-              required
-            />
+            <div className='relative'>
+              <input
+                className='input_text_email w-full pr-3 md:pr-24'
+                type='text'
+                name='email'
+                onChange={(e) => handleOnChange(e)}
+                placeholder='Email'
+              />
+              {!isEmailValid && emailAddress && (
+                <p className='absolute transition-all text-xs text-accent w-fit md:top-1/3 top-0 right-0'>
+                  Invalid Email
+                </p>
+              )}
+            </div>
             <textarea
               className='input_textarea'
               name='message'
@@ -67,9 +85,9 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
               required
             />
             <button
-              className='w-full md:w-1/2 uppercase font-semibold text-white bg-accent p-3 ml-auto'
+              className='w-full md:w-1/2 uppercase font-semibold text-white bg-accent p-3 ml-auto disabled:bg-black2 disabled:text-accent'
               type='submit'
-              disabled={sending}
+              disabled={!isEmailValid || sending}
             >
               {sending ? 'sending...' : 'send'}
             </button>
