@@ -9,7 +9,7 @@ const Component = ({ file }: Props): React.ReactElement => {
   return (
     <section className='wrapper flex flex-col gap-6' id='about'>
       <h1 className='header_text2'>About</h1>
-      <div className='w-full md:w-4/5 text-gray text-justify md:text-left flex flex-col gap-4'>
+      <div className='w-full md:w-4/5 text-gray text-justify text-sm md:text-base md:text-left flex flex-col gap-4'>
         <motion.p whileInView={animate.right}>
           Hello, I&apos;m{' '}
           <span className='text-white'>Jhon Angelo Bustarde</span>, a Software
@@ -34,7 +34,10 @@ const Component = ({ file }: Props): React.ReactElement => {
       </div>
       <div className='w-full md:w-3/5 flex flex-col gap-2'>
         <h4 className='font-bold text-xl text-accent'>TL;DR</h4>
-        <motion.p className='text-gray' whileInView={animate.up}>
+        <motion.p
+          className='text-gray text-sm md:text-base'
+          whileInView={animate.up}
+        >
           A Software Engineer who specializes in developing software with
           minimalistic designs that utilize whitespace.
         </motion.p>

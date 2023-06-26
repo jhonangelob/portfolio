@@ -6,7 +6,7 @@ const Component = ({}: Props): React.ReactElement => {
       className='wrapper mt-24 mb-36 flex-center flex-col gap-2 md:gap-6'
       id='feature'
     >
-      <h3 className='w-full flex justify-end text-xl md:text-3xl font-semibold text-gray'>
+      <h3 className='w-full flex justify-end text-xl md:text-3xl font-semibold text-gray italic md:not-italic'>
         Software Engineer
       </h3>
       <h1 className='font-bold text-black3 text-justify md:text-left text-5xl md:text-7xl'>

@@ -16,7 +16,7 @@ const Component = ({
     >
       <h1 className='header_text2'>Technology and Experiences</h1>
       <motion.p
-        className='w-full md:w-4/5 text-gray'
+        className='w-full md:w-4/5 text-gray text-sm md:text-base'
         whileInView={animate.right}
       >
         I&apos;m a skilled web developer with expertise in various technologies
@@ -74,7 +74,7 @@ const Component = ({
             >
               <p className='text-white font-semibold'>{experience.position}</p>
               <p className='text-gray text-sm'>{experience.company}</p>
-              <p className='text-black3 text-sm'>
+              <p className='text-black3 text-xs'>
                 {experience.startDate} -{' '}
                 <span className={`${experience.isPresent && 'text-accent'}`}>
                   {experience.endDate}
