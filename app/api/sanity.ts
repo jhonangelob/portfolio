@@ -13,7 +13,7 @@ export const fetchProjects = async () => {
         link
       }
     `;
-    const response = await sanityClient.fetch(query);
+    const response = await sanityClient.fetch(query, { cache: 'no-store' });
     return response;
   } catch (error) {
     console.error(error);
@@ -33,7 +33,7 @@ export const fetchExperiences = async () => {
       isPresent
     } | order(_createdAt, desc)
   `;
-    const response = await sanityClient.fetch(query);
+    const response = await sanityClient.fetch(query, { cache: 'no-store' });
     return response;
   } catch (error) {
     console.error(error);
@@ -48,7 +48,7 @@ export const fetchResume = async () => {
         "fileUrl": file.asset->url
       }
     `;
-    const response = await sanityClient.fetch(query);
+    const response = await sanityClient.fetch(query, { cache: 'no-store' });
     return response;
   } catch (error) {
     console.error(error);
@@ -67,7 +67,7 @@ export const fetchTechnologies = async () => {
         } 
       } | order(_createdAt, asc)
     `;
-    const response = await sanityClient.fetch(query);
+    const response = await sanityClient.fetch(query, { cache: 'no-store' });
     return response;
   } catch (error) {
     console.error(error);
@@ -83,7 +83,7 @@ export const fetchSocials = async () => {
         url
       } | order(_createdAt, asc)
     `;
-    const response = await sanityClient.fetch(query);
+    const response = await sanityClient.fetch(query, { cache: 'no-store' });
     return response;
   } catch (error) {
     console.error(error);
