@@ -7,8 +7,6 @@ import { translate } from '@/utils/animate';
 import { Fragment } from 'react';
 import { Props } from './types';
 
-const MotionLink = motion(Link);
-
 const Component = ({ content }: Props): React.ReactElement => {
   return (
     <Fragment>
@@ -36,15 +34,14 @@ const Component = ({ content }: Props): React.ReactElement => {
         id='header'
       >
         <div className='flex-between w-full max-w-5xl'>
-          <MotionLink
-            className='font-bold text-xl md:text-2xl'
-            href='/'
+          <motion.p
+            className='font-bold text-xl md:text-2xl cursor-default select-none'
             initial={translate.left}
             animate={translate.animate}
             transition={translate.transition}
           >
             jhn
-          </MotionLink>
+          </motion.p>
           <motion.div
             className='flex-center gap-2'
             initial={translate.right}
