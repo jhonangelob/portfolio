@@ -14,7 +14,7 @@ const Component = ({
       className='wrapper flex-start flex-col text-white gap-6'
       id='experiences'
     >
-      <h1 className='header_text2'>Technology and Experiences</h1>
+      <h1 className='header_text2'>Technology and Experience/s</h1>
       <motion.p
         className='w-full md:w-4/5 text-gray text-sm md:text-base'
         whileInView={animate.right}

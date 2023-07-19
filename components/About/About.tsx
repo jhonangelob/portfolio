@@ -28,7 +28,7 @@ const Component = ({ content }: Props): React.ReactElement => {
       <div className='flex-center text-center gap-8 mt-10 md:mt-20'>
         <Link href='#contact' className='group flex-center flex-col'>
           <p className='font-semibold text-lg md:text-2xl text-accent md:group-hover:text-white transition-slow'>
-            Let&apos; talk
+            Let&apos;s talk
           </p>
           <p className='font-medium text-xs md:text-sm text-black2 md:group-hover:text-background transition-fast'>
             Leave me a message
