@@ -6,7 +6,16 @@ import experience from './schemas/experience';
 import resume from './schemas/resume';
 import technology from './schemas/technology';
 import social from './schemas/social';
+import content from './schemas/content';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [project, experience, resume, technology, social, blockContent],
+  types: [
+    project,
+    experience,
+    resume,
+    technology,
+    social,
+    content,
+    blockContent,
+  ],
 };

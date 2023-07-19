@@ -40,3 +40,15 @@ type SocialSetting = {
 };
 
 export type Social = SocialSetting[];
+
+export type TextContentSettings = {
+  title: string;
+  jobTitle: string;
+  aboutMainTexT: any;
+  aboutTldr: any;
+  technologyMainText: string;
+  technologySubText1: string;
+  technologySubText2: string;
+  contactAddress1: string;
+  contactAddress2: string;
+};

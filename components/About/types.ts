@@ -1,6 +1,10 @@
 export type Props = {
-  file: {
-    name: string;
-    fileUrl: string;
+  content: {
+    file: {
+      name: string;
+      fileUrl: string;
+    };
+    mainText: any;
+    tldr: string;
   };
 };

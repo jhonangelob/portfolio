@@ -9,15 +9,14 @@ import { Props } from './types';
 
 const MotionLink = motion(Link);
 
-const Component = ({ socials }: Props): React.ReactElement => {
-  const showBanner = true;
+const Component = ({ content }: Props): React.ReactElement => {
   return (
     <Fragment>
       <div
         className='hidden md:flex justify-center w-full items-center bg-black2 p-3'
         id='banner'
       >
-        {showBanner ? (
+        {content.showBanner ? (
           <p className='text-white text-sm'>
             Check out my awesome{' '}
             <Link href='/#about' className='text-accent' scroll={false}>
@@ -52,7 +51,7 @@ const Component = ({ socials }: Props): React.ReactElement => {
             animate={translate.animate}
             transition={translate.transition}
           >
-            {socials.map((item) => (
+            {content.socials.map((item) => (
               <SocialIcon
                 key={item.name}
                 url={item.url}

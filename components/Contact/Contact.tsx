@@ -10,9 +10,11 @@ import { sendEmail } from '@/app/api/email';
 import { Props } from './types';
 import { validateEmail } from '@/utils/validation';
 
-const Component = ({ file, socials }: Props): React.ReactElement => {
+const Component = ({ content }: Props): React.ReactElement => {
   const contactForm = useRef<HTMLFormElement | null>(null);
   const [sending, setSending] = useState<boolean>(false);
+  const [name, setName] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
   const [emailAddress, setEmailAddress] = useState<string>('');
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
 
@@ -30,6 +32,8 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
     }
   };
 
+  const isSendButtonDisabled = !isEmailValid || sending || !name || !message;
+
   const handleOnChange = (e: any) => {
     const { value } = e.target;
     setIsEmailValid(validateEmail.test(value));
@@ -45,7 +49,7 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
             className='font-semibold text-white text-xl md:text-2xl'
             whileInView={animate.right}
           >
-            Any Question?
+            Question?
           </motion.h3>
           <p className='font-semibold text-accent text-sm md:text-base'>
             Leave me a message
@@ -60,8 +64,8 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
               className='input_text'
               type='text'
               name='name'
-              placeholder='Name'
-              required
+              placeholder='Your Name'
+              onChange={(e) => setName(e.target.value)}
             />
             <div className='relative'>
               <input
@@ -69,7 +73,7 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
                 type='text'
                 name='email'
                 onChange={(e) => handleOnChange(e)}
-                placeholder='Email'
+                placeholder='Your Email'
               />
               {!isEmailValid && emailAddress && (
                 <p className='absolute transition-all text-xs text-accent w-fit md:top-1/3 top-0 right-0'>
@@ -82,12 +86,12 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
               name='message'
               placeholder='Your Message'
               rows={4}
-              required
+              onChange={(e) => setMessage(e.target.value)}
             />
             <button
               className='w-full md:w-1/2 uppercase font-semibold text-white bg-accent p-3 ml-auto disabled:bg-black2 disabled:text-accent'
               type='submit'
-              disabled={!isEmailValid || sending}
+              disabled={isSendButtonDisabled}
             >
               {sending ? 'sending...' : 'send'}
             </button>
@@ -98,7 +102,7 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
           whileInView={animate.up}
         >
           <h3 className='font-bold text-white text-md md:text-2xl'>
-            Let&apos; talk about it.
+            Let&apos;s talk about it.
           </h3>
           <p className='text-gray text-sm text-center md:text-left'>
             You can find out more about me on my résumé.
@@ -117,14 +121,14 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
             >
               <Image src='assets/icons/file.svg' alt='pdf' fill={true} />
             </div>
-            Grab a copy
+            Get a copy
           </Link>
           <div className='flex flex-col text-xs items-center md:items-start md:text-sm text-gray'>
-            <p>Calamba, Laguna</p>
-            <p>Philippines</p>
+            <p>{content.address1}</p>
+            <p>{content.address2}</p>
           </div>
           <div className='flex flex-row gap-2'>
-            {socials.map((item) => (
+            {content.socials.map((item) => (
               <SocialIcon
                 key={item.name}
                 url={item.url}
@@ -147,13 +151,13 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
           whileInView={animate.left}
         >
           <h3 className='font-bold text-white text-md md:text-2xl'>
-            Let&apos; talk about it.
+            Let&apos;s talk about it.
           </h3>
           <p className='text-gray text-sm text-center md:text-left'>
             You can find out more about me on my résumé.
           </p>
           <Link
-            href={`${file.fileUrl}`}
+            href={`${content.file.fileUrl}`}
             rel='noopener noreferrer'
             target='_blank'
             className='font-semibold text-accent flex flex-row gap-2'
@@ -168,14 +172,14 @@ const Component = ({ file, socials }: Props): React.ReactElement => {
             >
               <Image src='assets/icons/file.svg' alt='pdf' fill={true} />{' '}
             </div>
-            Grab a copy
+            Get a copy
           </Link>
           <div className='flex flex-col text-xs items-center md:items-start md:text-sm text-gray'>
-            <p>Calamba, Laguna</p>
-            <p>Philippines</p>
+            <p>{content.address1}</p>
+            <p>{content.address2}</p>
           </div>
           <div className='flex flex-row gap-2'>
-            {socials.map((item) => (
+            {content.socials.map((item) => (
               <SocialIcon
                 key={item.name}
                 url={item.url}

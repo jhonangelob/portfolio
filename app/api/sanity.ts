@@ -1,6 +1,28 @@
 import { sanityClient } from '@/sanity/lib/client';
 import { groq } from 'next-sanity';
 
+export const fetchTextContent = async () => {
+  try {
+    const query = groq`
+      *[_type == "textContent"] {
+        _id, 
+        jobTitle, 
+        aboutMainText, 
+        aboutTldr, 
+        technologyMainText, 
+        technologySubText1,
+        technologySubText2,
+        contactAddress1,
+        contactAddress2
+      } | order(_createdAt, desc)[0]
+    `;
+    const response = await sanityClient.fetch(query, { cache: 'no-store' });
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const fetchProjects = async () => {
   try {
     const query = groq`

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { animate } from '@/utils/animate';
 import { Props } from './types';
 
-const Component = ({ projects }: Props): React.ReactElement => {
+const Component = ({ projects, textContent }: Props): React.ReactElement => {
   return (
     <section className='wrapper flex-center flex-col my-8' id='projects'>
       <h1 className='header_text'>Projects</h1>
@@ -25,7 +25,7 @@ const Component = ({ projects }: Props): React.ReactElement => {
             <div className='flex items-center gap-2 flex-wrap'>
               {project.technologies.map((item) => (
                 <p
-                  className='uppercase font-light text-black3 text-xs'
+                  className='uppercase font-normal text-black3 text-xs'
                   key={item}
                 >
                   {item}
