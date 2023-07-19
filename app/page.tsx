@@ -74,7 +74,7 @@ const Home = async () => {
       <Header content={headerComponentData} />
       <Featured content={featuredPageData} />
       <About content={aboutPageData} />
-      <Projects textContent={textContents} projects={projects} />
+      <Projects projects={projects} />
       <Experiences
         textContent={experiencePageText}
         experiences={experiences}

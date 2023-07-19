@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { animate } from '@/utils/animate';
 import { Props } from './types';
 
-const Component = ({ projects, textContent }: Props): React.ReactElement => {
+const Component = ({ projects }: Props): React.ReactElement => {
   return (
     <section className='wrapper flex-center flex-col my-8' id='projects'>
       <h1 className='header_text'>Projects</h1>
@@ -41,6 +41,14 @@ const Component = ({ projects, textContent }: Props): React.ReactElement => {
             </div>
           </motion.div>
         ))}
+        {projects.length % 2 !== 0 && (
+          <motion.div
+            className='flex justify-center items-center gap-4 pt-2 py-6 md:py-0 border-0 md:border-b border-black3 text-black3 font-semibold md:font-bold text-md md:text-lg select-none'
+            whileInView={animate.up}
+          >
+            Currently building something great
+          </motion.div>
+        )}
       </div>
     </section>
   );
