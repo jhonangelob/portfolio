@@ -89,7 +89,7 @@ const Component = ({ content }: Props): React.ReactElement => {
               onChange={(e) => setMessage(e.target.value)}
             />
             <button
-              className='w-full md:w-1/2 uppercase font-semibold text-white bg-accent p-3 ml-auto disabled:bg-black2 disabled:text-accent'
+              className='w-full md:w-1/2 uppercase font-semibold text-white bg-accent p-3 ml-auto disabled:bg-black2 disabled:text-accent transition-all'
               type='submit'
               disabled={isSendButtonDisabled}
             >
@@ -97,10 +97,7 @@ const Component = ({ content }: Props): React.ReactElement => {
             </button>
           </motion.form>
         </div>
-        <motion.div
-          className='flex md:hidden my-auto flex-col items-center md:items-start gap-2'
-          whileInView={animate.up}
-        >
+        <div className='flex md:hidden my-auto flex-col items-center md:items-start gap-2'>
           <h3 className='font-bold text-white text-md md:text-2xl'>
             Let&apos;s talk about it.
           </h3>
@@ -145,7 +142,7 @@ const Component = ({ content }: Props): React.ReactElement => {
           >
             Scroll to top
           </Link>
-        </motion.div>
+        </div>
         <motion.div
           className='hidden md:flex mt-12 flex-col items-center md:items-start gap-2'
           whileInView={animate.left}
