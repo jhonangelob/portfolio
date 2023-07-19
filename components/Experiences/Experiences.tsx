@@ -23,7 +23,7 @@ const Component = ({
         I&apos;m a skilled web developer with expertise in various technologies
         and a passion for continuous learning and growth in the field.
       </motion.p>
-      <div className='flex-start flex-col md:flex-row md:gap-44'>
+      <div className='flex-start flex-col md:flex-row gap-6 md:gap-32'>
         <div className='flex flex-col gap-4 mb-4 md:mb-0'>
           <p className='text-accent font-medium'>Technologies</p>
           <p className='text-gray text-sm md:text-base'>
