@@ -63,12 +63,7 @@ const Home = async () => {
     <main className='app min-h-screen w-full flex-center flex-col'>
       <Header content={headerComponentData} />
       <Featured content={featuredPageData} />
-      <About
-        content={aboutPageData}
-        mainText={aboutMainText}
-        tldr={tldr}
-        file={resume}
-      />
+      <About content={aboutPageData} />
       <Projects textContent={textContents} projects={projects} />
       <Experiences experiences={experiences} technologies={technologies} />
       <Contact content={contactPageData} />
