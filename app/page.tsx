@@ -32,8 +32,14 @@ const Home = async () => {
       textContent,
     ]);
 
-  const { jobTitle, aboutMainText, contactAddress1, contactAddress2 } =
-    textContents;
+  const {
+    jobTitle,
+    aboutMainText,
+    technologySubText1,
+    technologySubText2,
+    contactAddress1,
+    contactAddress2,
+  } = textContents;
   const tldr = textContents.aboutTldr[0].children[0].text;
 
   const headerComponentData = {
@@ -50,7 +56,11 @@ const Home = async () => {
     tldr: tldr,
     file: resume,
   };
-  const experiencePageText = {};
+
+  const experiencePageText = {
+    subText1: technologySubText1,
+    subText2: technologySubText2,
+  };
 
   const contactPageData = {
     address1: contactAddress1,
@@ -65,7 +75,11 @@ const Home = async () => {
       <Featured content={featuredPageData} />
       <About content={aboutPageData} />
       <Projects textContent={textContents} projects={projects} />
-      <Experiences experiences={experiences} technologies={technologies} />
+      <Experiences
+        textContent={experiencePageText}
+        experiences={experiences}
+        technologies={technologies}
+      />
       <Contact content={contactPageData} />
       <Footer />
     </main>

@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { Props } from './types';
 
 const Component = ({
+  textContent,
   experiences,
   technologies,
 }: Props): React.ReactElement => {
@@ -26,7 +27,7 @@ const Component = ({
         <div className='flex flex-col gap-4 mb-4 md:mb-0'>
           <p className='text-accent font-medium'>Technologies</p>
           <p className='text-gray text-sm md:text-base'>
-            Development Languages/Libraries/Frameworks
+            {textContent.subText1}
           </p>
           <motion.div
             className='flex-start gap-6 flex-wrap'
@@ -45,7 +46,9 @@ const Component = ({
               </div>
             ))}
           </motion.div>
-          <p className='text-gray text-sm md:text-base'>Other tools</p>
+          <p className='text-gray text-sm md:text-base'>
+            {textContent.subText2}
+          </p>
           <motion.div
             className='flex-start gap-6 flex-wrap'
             whileInView={animate.up}
