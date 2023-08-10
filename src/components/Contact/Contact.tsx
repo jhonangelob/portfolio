@@ -10,8 +10,10 @@ import { sendEmail } from '@/src/services/global/api';
 import { Contact } from '@/src/types/contact';
 import { validateEmail } from '@/src/utils/validation';
 import { ContactForm } from '../Form';
+import { useToast } from '@/components/ui/use-toast';
 
 const Component = ({ content }: Contact): React.ReactElement => {
+  const { toast } = useToast();
   const contactForm = useRef<HTMLFormElement | null>(null);
   const [sending, setSending] = useState<boolean>(false);
   const [name, setName] = useState<string>('');
@@ -25,10 +27,18 @@ const Component = ({ content }: Contact): React.ReactElement => {
       if (isEmailValid) {
         setSending(true);
         await sendEmail(contactForm.current);
+        toast({
+          title: 'Success!',
+          description: 'Your messsage has been sent.',
+        });
         setSending(false);
         e.target.reset();
       }
     } catch (error) {
+      toast({
+        title: 'Failed!',
+        description: 'Failed sending message.',
+      });
       setSending(false);
     }
   };

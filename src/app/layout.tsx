@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/toaster';
 import '@/src/styles/globals.css';
 import { Poppins } from 'next/font/google';
 
@@ -18,7 +19,12 @@ type Props = {
 const RootLayout = ({ children }: Props) => {
   return (
     <html lang='en'>
-      <body className={`${poppins.className} bg-background`}>{children}</body>
+      <body className={`${poppins.className} bg-background`}>
+        <main>
+          {children}
+          <Toaster />
+        </main>
+      </body>
     </html>
   );
 };
